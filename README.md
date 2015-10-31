@@ -10,5 +10,5 @@ Installation
 3. Click on the "Developer mode" checkbox
 4. Drag and drop "Per game averages.user.js" into the window
 5. Click the add button
-6. Visit the GhostDivision standings page http://games.espn.go.com/fba/standings?leagueId=34796&seasonId=2015
+6. Visit the GhostDivision standings page http://games.espn.go.com/fba/standings?leagueId=34796&seasonId=2016
 7. Profit

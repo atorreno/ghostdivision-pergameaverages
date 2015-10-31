@@ -2,7 +2,7 @@
 // @name           Per game averages
 // @namespace      http://www.lillex.com/
 // @description calculates per game averages
-// @include http://games.espn.go.com/fba/standings?leagueId=34796&seasonId=2015
+// @include http://games.espn.go.com/fba/standings?leagueId=34796&seasonId=2016
 // @include http://games.espn.go.com/fba/standings?leagueId=34796&view=live
 // @include http://games.espn.go.com/fba/standings?leagueId=34796&view=official
 // @grant none
@@ -36,7 +36,8 @@ function main() {
 
   //helper functions
   var calculateAvg = function(el,total,gamesplayed){
-    el.html(Math.round(parseInt(total)/parseInt(gamesplayed) *1000)/1000)
+    var avg = Math.round(parseInt(total)/parseInt(gamesplayed) *1000)/1000;
+    el.html(avg.toFixed(3));
   }
 
 
