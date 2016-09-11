@@ -1,18 +1,9 @@
-// ==UserScript==
-// @name           Per game averages
-// @namespace      http://www.lillex.com/
-// @description calculates per game averages
-// @include http://games.espn.go.com/fba/standings?leagueId=34796&seasonId=2016
-// @include http://games.espn.go.com/fba/standings?leagueId=34796&view=live
-// @include http://games.espn.go.com/fba/standings?leagueId=34796&view=official
-// @grant none
-// ==/UserScript==
 // a function that loads jQuery and calls a callback function when jQuery has finished loading
 function addJQuery(callback) {
   var script = document.createElement("script"),
   tablesorter = document.createElement("script");
   script.setAttribute("src", "//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js");
-  tablesorter.setAttribute("src", "//lillex.com/fantasy/jquery.tablesorter.min.js");
+  tablesorter.setAttribute("src", "//d23ax7aumibrod.cloudfront.net/jquery.tablesorter.min.js");
   script.addEventListener('load', function() {
     document.body.appendChild(tablesorter);
   }, false);
@@ -36,6 +27,7 @@ function main() {
 
   //helper functions
   var calculateAvg = function(el,total,gamesplayed){
+    gamesplayed = (gamesplayed == 0) ? 1 : gamesplayed;
     var avg = Math.round(parseInt(total)/parseInt(gamesplayed) *1000)/1000;
     el.html(avg.toFixed(3));
   }
@@ -96,7 +88,6 @@ function main() {
   parameter 1: new table ID
   parameter 2: new class prefix
   parameter 3: new table header
-
   */
   var createNewTable = function(newTableID, newClassPrefix, newTableHeader){
     //create a new table
@@ -168,5 +159,4 @@ function main() {
 
 // load jQuery and execute the main function
 addJQuery(main);
-
 

@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "name": "GhostDivision per game averages",
+  "version": "1.0",
+  "content_scripts": [
+  {
+    "matches": [
+      "http://games.espn.com/fba/standings?leagueId=34796&seasonId=*"
+    ],
+    "js": ["Per game averages.user.js"]
+  }
+],
+  "icons": { 
+	"128": "handdrawn-basketball-128.png"
+  }
+}
